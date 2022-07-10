@@ -7,86 +7,87 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+#
+# The settings in this file are used to personalize your new site.
+# If you look in the HTML files, you will see them accessed via {{ site.title }} and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
-minimal_mistakes_skin: default
-search: true
 
-# Build settings
-markdown: kramdown
+# Theme
 remote_theme: mmistakes/minimal-mistakes
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+minimal_mistakes_skin: dark # "air", "aqua", "contrast", "dark", "default", "dirt", "neon", "mint", "plum", "sunrise"
 
-include:
-  - _pages
+# Site settings
+title                    : Marco Omainska
+title_separator          : "-"
+subtitle                 : # site tagline that appears below site title in masthead
+masthead_title           : Home # overrides the website title displayed in the masthead, use " " for no title
+name                     : Marco Omainska
+description: >- # this means to ignore newlines until "baseurl:"
+  Marco Omainska: Ph.D. candidate at The University of Tokyo.
+  Researcher in Cognitive Cyber-Physical Systems.
+  Working with a vision that AI and Robotics will empower people to reach a higher life standard.
+url                      : "https://marcoiska.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : "marcoiska/marcoiska.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+locale                   : "en-US"
+words_per_minute         : 150
+timezone                 : Asia/Tokyo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+search                   : true # enables/disables site's search feature
+atom_feed: # RSS feed
+  path                   : # blank (default) uses feed.xml
+  hide                   : true # true, false (default)
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Social Sharing
+# To improve the appearance of links shared from your site to social networks like Twitter and Facebook
+twitter:
+  username       : # The username to appear in the shared Twitter messages
+og_image         : # Open Graph/Twitter default site image
+# Adding social profile information to the Google knowledge panel if you appear in search results.
+#   - see: https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type           : # Person or Organization (default: Person)
+  name           : Marco Omainska # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/marco-omainska/"
+    - "https://github.com/marcoiska"
 
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
+# Sidebar author information
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+  name          : Marco Omainska
+  avatar        : "/assets/images/profile.jpg"
+  bio           : Ph.D. candidate at The University of Tokyo
+  location      : Tokyo, JAPAN
+  email         : marcoomainska@g.ecc.u-tokyo.ac.jp
+  linkedin      : marco-omainska
+  uri           : "https://www.scl.ipc.i.u-tokyo.ac.jp/"
+  github        : marcoiska
+  googlescholar : tN7eLc4AAAAJ
+  orcid         : 0000-0003-1544-4328
+  # links:
+  #   - label: "Google Scholar"
+  #     icon: "fas fa-fw fa-graduation-cap"
+  #     url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
+  #   - label: "ORCID"
+  #     icon: "ai ai-orcid ai-fw"
+  #     url: "http://orcid.org/0000-0003-1544-4328"
 
+# Site footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/marcoiska"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/marco-omainska/"
+    # - label: "Google Scholar"
+    #   icon: "fas fa-fw fa-graduation-cap"
+    #   url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
 
+# Front Matter Defaults
 defaults:
   # _posts
   - scope:
@@ -99,6 +100,7 @@ defaults:
       comments: true
       share: true
       related: true
+      show_date: true
   # _pages
   - scope:
       path: "_pages"
@@ -107,9 +109,58 @@ defaults:
       layout: single
       author_profile: true
 
+# Build settings
+markdown: kramdown
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+# Minimal Mistakes ships with support for taxonomy (category and tag) pages
+#   - see: https://mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Especially include stuff to processing
+include:
+  - _pages
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins / Gems:
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache

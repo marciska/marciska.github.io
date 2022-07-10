@@ -1,4 +1,13 @@
+#################################################
+# Project files and folders
+#################################################
+
+# from jekyll
 _site
 .sass-cache
 .jekyll-metadata
+.bundle/
 Gemfile.lock
+
+# IDE
+.vscode/
