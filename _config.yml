@@ -62,14 +62,14 @@ author:
   location      : Tokyo, JAPAN
   email         : marcoomainska@g.ecc.u-tokyo.ac.jp
   linkedin      : marco-omainska
-  uri           : "https://www.scl.ipc.i.u-tokyo.ac.jp/"
+  # uri           : "https://www.scl.ipc.i.u-tokyo.ac.jp/"
   github        : marciska
   googlescholar : tN7eLc4AAAAJ
   orcid         : 0000-0003-1544-4328
-  # links:
-  #   - label: "Google Scholar"
-  #     icon: "fas fa-fw fa-graduation-cap"
-  #     url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
+  links:
+    - label: "Lab Homepage"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.scl.ipc.i.u-tokyo.ac.jp/"
   #   - label: "ORCID"
   #     icon: "ai ai-orcid ai-fw"
   #     url: "http://orcid.org/0000-0003-1544-4328"
