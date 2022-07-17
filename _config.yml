@@ -27,9 +27,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Marco Omainska: Ph.D. candidate at The University of Tokyo.
   Researcher in Cognitive Cyber-Physical Systems.
   Working with a vision that AI and Robotics will empower people to reach a higher life standard.
-url                      : "https://marcoiska.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://www.marciska.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "marcoiska/marcoiska.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "marciska/marciska.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 locale                   : "en-US"
@@ -52,7 +52,7 @@ social:
   name           : Marco Omainska # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - "https://www.linkedin.com/in/marco-omainska/"
-    - "https://github.com/marcoiska"
+    - "https://github.com/marciska"
 
 # Sidebar author information
 author:
@@ -63,7 +63,7 @@ author:
   email         : marcoomainska@g.ecc.u-tokyo.ac.jp
   linkedin      : marco-omainska
   uri           : "https://www.scl.ipc.i.u-tokyo.ac.jp/"
-  github        : marcoiska
+  github        : marciska
   googlescholar : tN7eLc4AAAAJ
   orcid         : 0000-0003-1544-4328
   # links:
@@ -77,15 +77,15 @@ author:
 # Site footer
 footer:
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/marcoiska"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/marco-omainska/"
-    # - label: "Google Scholar"
-    #   icon: "fas fa-fw fa-graduation-cap"
-    #   url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/marcoiska"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
 
 # Front Matter Defaults
 defaults:
