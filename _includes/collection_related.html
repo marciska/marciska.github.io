@@ -1,0 +1,11 @@
+{% if page.id and site.[page.collection].size > 1 %}
+  <div class="page__related">
+    <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Be Interested In" }}</h2>
+    <div class="grid__wrapper">
+      {% assign related = site.[page.collection] | where_exp:"p", "p.id != page.id" %}
+      {% for post in related limit:4 %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
