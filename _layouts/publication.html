@@ -1,0 +1,110 @@
+---
+layout: default
+classes:
+  - wide
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+{% assign breadcrumbs_enabled = site.breadcrumbs %}
+{% if page.breadcrumbs != null %}
+  {% assign breadcrumbs_enabled = page.breadcrumbs %}
+{% endif %}
+{% if page.url != "/" and breadcrumbs_enabled %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+
+    <div class="page__inner-wrap">
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <header>
+          {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+          </h1>{% endif %}
+          {% include page__meta.html %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content e-content" itemprop="text">
+          <div>
+            {% for action in page.actions %}
+              <a href="{{action.url}}"><img src="{{action.img}}" alt=""></a>
+            {% endfor %}
+          </div>
+          <ul class="publication__meta social-icons">
+            {% if page.authors %}
+            <li>
+              <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="label">{{page.authors}}</span>
+            </li>
+            {% endif %}
+            {% if page.conference %}
+            <li>
+              <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="label">{{page.conference}}</span>
+            </li>
+            {% endif %}
+            {% if page.journal %}
+            <li>
+              <i class="fa-solid fa-book" aria-hidden="true"></i><span class="label">{{page.journal}}</span>
+            </li>
+            {% endif %}
+            {% if page.year %}
+            <li>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i><span class="label">{{page.year}}</span>
+            </li>
+            {% endif %}
+          </ul>
+          {% if page.status == "accepted" %}
+            <p class="notice"><span>Notice:</span>This paper has been accepted, but has yet to be presented at the conference.</p>
+          {% elsif page.status == "submitted" %}
+            <p class="notice--warning"><span>Notice:</span>This paper has been submitted and is waiting for acceptance.</p>
+          {% endif %}
+          {% if page.abstract %}
+          <p>Abstract:
+            <br>
+            {{page.abstract}}
+          </p>
+          {% endif %}
+          {% if page.citeas %}
+            <p>Cite as:
+              <br>
+              {{page.citeas}}
+            </p>
+          {% endif %}
+          {{ content }}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+      </section>
+
+      <footer class="page__meta">
+        {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+        {% endif %}
+        {% include page__taxonomy.html %}
+        {% include page__date.html %}
+      </footer>
+
+      {% if page.share %}{% include social-share.html %}{% endif %}
+      
+      {% comment %}{% include post_pagination.html %}{% endcomment %}
+    </div>
+
+    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
+      {% include comments.html %}
+    {% endif %}
+  </article>
+
+  {% if page.related %}{% include collection_related.html %}{% endif %}
+</div>
