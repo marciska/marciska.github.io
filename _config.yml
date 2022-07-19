@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Marco Omainska: Ph.D. candidate at The University of Tokyo.
   Researcher in Cognitive Cyber-Physical Systems.
   Working with a vision that AI and Robotics will empower people to reach a higher life standard.
-url                      : "https://www.marciska.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://marciska.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "marciska/marciska.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
