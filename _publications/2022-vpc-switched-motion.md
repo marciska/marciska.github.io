@@ -20,7 +20,7 @@ header:
   teaser: assets/images/vpc-switched-motion.jpeg
 actions:
   - img: https://img.shields.io/badge/Code-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white
-    url: https://github.com
+    url: https://github.com/marciska/vpc-switched-motion
   - img: https://img.shields.io/badge/Conference%20Website-gray?style=for-the-badge&logo=safari&logoColor=white
     url: https://ifacms-movic2022.seas.ucla.edu/home/
 ---
