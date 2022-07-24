@@ -1,10 +1,7 @@
 ---
-layout: collection
-collection: publications
+layout: collection_publications
 title: Publications
 permalink: /publications/
 entries_layout: grid
 classes: wide
 ---
-
-To be filled.
