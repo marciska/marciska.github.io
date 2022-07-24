@@ -17,11 +17,15 @@ abstract: "Order picking is one of the most expensive tasks in warehouses nowada
 header:
   image: assets/images/automated-order-picking_header.jpeg
   teaser: assets/images/automated-order-picking_header.jpeg
+  caption: "© Fraunhofer IPA, Rainer Bez"
+  image_description: "Robot picking objects from a shelf"
 actions:
   - img: https://img.shields.io/badge/Read%20Article-red?style=for-the-badge&logo=Adobe&logoColor=white
     url: https://doi.org/10.1007/978-3-030-34995-0_18
-  - img: https://img.shields.io/badge/Visit%20Website-orange?style=for-the-badge&logo=safari&logoColor=white
+  - img: https://img.shields.io/badge/Project%20Website-orange?style=for-the-badge&logo=safari&logoColor=white
     url: https://www.ipa.fraunhofer.de/en/expertise/robot-and-assistive-systems/industrial-and-commercial-service-robots/robots_for_retail_logistics.html
+  - img: https://img.shields.io/badge/Conference%20Website-gray?style=for-the-badge&logo=safari&logoColor=white
+    url: https://icvs2019.org
 ---
 
 {% include video id="ABaM5szeVFE" provider="youtube" %}
