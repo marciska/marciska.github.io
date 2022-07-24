@@ -7,3 +7,55 @@
   font-weight: 700;
   margin-right: 0.7em;
 }
+
+.notice_box > * {
+  font-size: 1.2em;
+}
+
+/* style code environments */
+
+pre code {
+  white-space: pre-wrap;
+}
+
+div.highlight pre.highlight, figure.highlight pre, [data-copyable=true] {
+  padding-right: 110px;
+}
+
+/* copy button */
+
+.copy_code_button {
+  display: block;
+
+  // set position
+  position: absolute;
+  right: 25px;
+  top: min(32px*1.5,50%);
+  transform: translateY(-50%);
+
+  // size
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  // style of button
+  font-size: 0.7rem;
+  background-color: rgba(129, 129, 129, 0.263);
+  color: hsl(0deg, 0%, 83%);
+  border: none;
+
+  // make pointer a cursor when hovering
+  cursor: pointer;
+}
+
+* > .copy_code_button {
+  opacity: 0;
+}
+
+*:hover > .copy_code_button {
+  opacity: 1;
+}
+
+* > .copy_code_button:active,
+* > .copy_code_button:focus {
+  opacity: 1;
+}

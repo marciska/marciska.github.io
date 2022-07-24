@@ -208,3 +208,8 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+
+# add custom js scripts
+# head_scripts:
+after_footer_scripts:
+  - /assets/js/custom/copybutton.js

@@ -40,30 +40,30 @@ classes:
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
-          <div>
+          <div class="action__wrapper">
             {% for action in page.actions %}
-              <a href="{{action.url}}"><img src="{{action.img}}" alt=""></a>
+              <a class="action-btn" href="{{action.url}}"><img src="{{action.img}}" alt=""></a>
             {% endfor %}
           </div>
-          <ul class="publication__meta social-icons">
+          <ul class="publication_meta__wrapper social-icons">
             {% if page.authors %}
             <li>
-              <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="label">{{page.authors}}</span>
+              <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="publication_meta--label">{{page.authors}}</span>
             </li>
             {% endif %}
             {% if page.conference %}
             <li>
-              <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="label">{{page.conference}}</span>
+              <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="publication_meta--label">{{page.conference}}</span>
             </li>
             {% endif %}
             {% if page.journal %}
             <li>
-              <i class="fa-solid fa-book" aria-hidden="true"></i><span class="label">{{page.journal}}</span>
+              <i class="fa-solid fa-book" aria-hidden="true"></i><span class="publication_meta--label">{{page.journal}}</span>
             </li>
             {% endif %}
             {% if page.year %}
             <li>
-              <i class="fa-solid fa-calendar" aria-hidden="true"></i><span class="label">{{page.year}}</span>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i><span class="publication_meta--label">{{page.year}}</span>
             </li>
             {% endif %}
           </ul>
@@ -98,24 +98,20 @@ classes:
             <p class="{{notice_type}} notice_box"><span class="notice_label">{{notice_label}}:</span><span class="notice_text">{{notice_text}}</span></p>
           {% endif %}
           {% if page.abstract %}
-          <p>Abstract:
-            <br>
-            {{page.abstract}}
-            <br>
-            <!-- {% highlight text %}
-{{page.abstract}}
-            {% endhighlight %} -->
-            {% capture notice-text %}
-            {{page.abstract}}
-            {% endcapture %}
-            {{ notice-text | markdownify | normalize_whitespace }}
-          </p>
+            <div class="publication__element--wrapper">
+              <span class="publication__element--label">Abstract:</span>
+              <div class="publication__abstract">
+                {{page.abstract}}
+              </div>
+            </div>
           {% endif %}
           {% if page.citeas %}
-            <p>Cite as:
-              <br>
-              {{page.citeas}}
-            </p>
+            <div class="publication__element--wrapper">
+              <span class="publication__element--label">Cite as:</span>
+              <div class="publication__citeas" data-copyable=true>
+                {{page.citeas}}
+              </div>
+            </div>
           {% endif %}
           {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

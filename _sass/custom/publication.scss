@@ -3,7 +3,11 @@
  * Copyright 2022 Marco Omainska - marciska.com
 */
 
-.publication__meta {
+.action__wrapper {
+  margin-bottom: 0.3em;
+}
+
+.publication_meta__wrapper {
   list-style-type: none;
   margin: 0px 0px 10px 0px;
   padding: 0px;
@@ -12,9 +16,46 @@
     margin: 0px;
     padding: 0px;
 
-    span.label {
+    .publication_meta--label {
       font-style: italic;
       padding-left: 10px;
     }
+
+    i {
+      display:inline-block;
+      // font-size: 1.2em;
+      width: 1.3em;
+      text-align: center;
+      vertical-align: center;
+      margin-left: 0.2em;
+    }
   }
+}
+
+.publication__element--wrapper {
+  margin-bottom: 1em;
+}
+
+.publication__element--label {
+  font-size: 1.2em;
+}
+
+.publication__abstract {
+  position: relative;
+  padding: 10px;
+  font-size: 0.9em;
+  border: solid;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.254);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.publication__citeas {
+  position: relative;
+  padding: 10px 140px 10px 10px;
+  font-size: 0.9em;
+  border: solid;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.254);
+  border-color: rgba(0, 0, 0, 0);
 }
