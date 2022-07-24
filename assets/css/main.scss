@@ -9,18 +9,5 @@ search: false
 @import "minimal-mistakes"; // main partials
 
 /* make custom changes below */
-.publication__meta {
-  list-style-type: none;
-  margin: 0px 0px 10px 0px;
-  padding: 0px;
-
-  li {
-    margin: 0px;
-    padding: 0px;
-
-    span.label {
-      font-style: italic;
-      padding-left: 10px;
-    }
-  }
-}
+@import "custom/publication.scss";
+@import "custom/utilities.scss";

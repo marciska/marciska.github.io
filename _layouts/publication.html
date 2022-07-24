@@ -67,15 +67,48 @@ classes:
             </li>
             {% endif %}
           </ul>
-          {% if page.status == "accepted" %}
-            <p class="notice"><span>Notice:</span>This paper has been accepted, but has yet to be presented at the conference.</p>
-          {% elsif page.status == "submitted" %}
-            <p class="notice--warning"><span>Notice:</span>This paper has been submitted and is waiting for acceptance.</p>
+          {% if page.status %}
+
+            {% if page.status.label %}
+              {% assign notice_label = page.status.label %}
+            {% else %}
+              {% assign notice_label = "Notice" %}
+            {% endif %}
+
+            {% if page.status.type %}
+              {% assign notice_type = page.status.type %}
+            {% else %}
+              {% if page.status == "submitted" %}
+                {% assign notice_type = "notice--warning" %}
+              {% else %}
+                {% assign notice_type = "notice" %}
+              {% endif %}
+            {% endif %}
+
+            {% if page.status.text %}
+              {% assign notice_text = page.status.text %}
+            {% else %}
+              {% if page.status == "accepted" %}
+                {% assign notice_text = "This paper has been accepted, but has yet to be presented at the conference." %}
+              {% elsif page.status == "submitted" %}
+                {% assign notice_text = "This paper has been submitted and is waiting for acceptance." %}
+              {% endif %}
+            {% endif %}
+
+            <p class="{{notice_type}} notice_box"><span class="notice_label">{{notice_label}}:</span><span class="notice_text">{{notice_text}}</span></p>
           {% endif %}
           {% if page.abstract %}
           <p>Abstract:
             <br>
             {{page.abstract}}
+            <br>
+            <!-- {% highlight text %}
+{{page.abstract}}
+            {% endhighlight %} -->
+            {% capture notice-text %}
+            {{page.abstract}}
+            {% endcapture %}
+            {{ notice-text | markdownify | normalize_whitespace }}
           </p>
           {% endif %}
           {% if page.citeas %}
