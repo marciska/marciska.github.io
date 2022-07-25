@@ -2,9 +2,9 @@
 title: "Cooperative Visual Pursuit Control with Learning of Target Motion via Distributed Gaussian Processes under Varying Visibility"
 authors: "Junya Yamauchi, Makoto Saito, Marco Omainska, Takeshi Hatanaka and Masayuki Fujita"
 # permalink: /publications/2022-...
-date: 2022-06-10
-conference: "16th International Conference on Motion and Vibration Control (MS-MoViC)"
-journal:
+date: 2022-07-06
+conference:
+journal: "SICE Journal of Control, Measurement, and System Integration"
 # paperurl:
 # link:
 citeas:

@@ -2,7 +2,7 @@
 title: "Distributed Gaussian Process Based Cooperative Visual Pursuit Control for Drone Networks"
 authors: "Makoto Saito, Junya Yamauchi, Tesshu Fujinami, Marco Omainska and Masayuki Fujita"
 # permalink: /publications/2022-...
-date: 2022-07-07
+date: 2022-07-05
 conference: "16th International Conference on Motion and Vibration Control (MS-MoViC)"
 journal:
 # paperurl:
