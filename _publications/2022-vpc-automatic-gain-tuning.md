@@ -5,6 +5,7 @@ authors: "Tesshu Fujinami, Junya Yamauchi, Marco Omainska and Masayuki Fujita"
 date: 2022-07-07
 conference: "6th IEEE Conference on Control Technology and Applications (CCTA)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas:

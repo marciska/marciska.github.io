@@ -5,6 +5,7 @@ authors: "Marco Omainska, Junya Yamauchi and Masayuki Fujita"
 date: 2022-07-07
 conference: "16th International Conference on Motion and Vibration Control (MS-MoViC)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas:

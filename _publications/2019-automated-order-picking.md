@@ -4,6 +4,7 @@ authors: "Richard Bormann, Bruno Ferreira de Brito, Jochen Lindermayr, Marco Oma
 date: 2019-09-23
 conference: "12th International Conference on Computer Vision Systems (ICVS)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas: "Bormann, R., de Brito, B.F., Lindermayr, J., Omainska, M., Patel, M. (2019). “Towards Automated Order Picking Robots for Warehouses and Retail”. In: Tzovaras, D., Giakoumis, D., Vincze, M., Argyros, A. (eds) Computer Vision Systems. ICVS 2019. Lecture Notes in Computer Science, vol 11754. Springer, Cham."

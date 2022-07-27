@@ -2,6 +2,6 @@
 layout: collection_publications
 title: Publications
 permalink: /publications/
-entries_layout: grid
+# entries_layout: grid
 classes: wide
 ---

@@ -4,6 +4,7 @@ authors: "Junya Yamauchi, Marco Omainska, Thomas Beckers, Takeshi Hatanaka, Sand
 date: 2020-09-23
 conference: "59th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas: "J. Yamauchi, T. Beckers, M. Omainska, T. Hatanaka, S. Hirche and M. Fujita, “Visual Pursuit Control with Target Motion Learning via Gaussian Process”, 2020 59th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE), 2020, pp. 1365-1372."

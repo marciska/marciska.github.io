@@ -59,3 +59,70 @@
   background-color: rgba(0, 0, 0, 0.254);
   border-color: rgba(0, 0, 0, 0);
 }
+
+/* Publication Card */
+
+.pub__card {
+  position: relative;
+  display: block;
+  margin: 20px 0px;
+  padding: 10px;
+  background-color: rgba(16, 11, 37, 0.095);
+  border-radius: 10px;
+
+  .pub__card--teaser {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    margin: 0;
+    // background-color: aqua;
+
+    img {
+      // position: relative;
+      border-radius: 10px;
+      margin: 0;
+    }
+  }
+
+  .pub__card--description {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    width: 70%;
+    vertical-align: top;
+    // background-color: red;
+
+    .pub__card--title {
+      // display: inline-block;
+      font-size: 1.2em;
+      margin: 0;
+      align-items: flex-start;
+
+      a[rel="permalink"]::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .pub__card--meta {
+      // display: inline-block;
+      font-size: 0.8em;
+      font-style: italic;
+
+      span {
+        font-weight: 700;
+        color:rgb(221, 191, 152);
+      }
+    }
+  }
+
+  .pub__card--excerpt {
+    // font-style: italic;
+    font-size: 0.8em;
+    color: rgb(208, 221, 221);
+    margin: 15px 0 0 0;
+  }
+}

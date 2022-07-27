@@ -5,6 +5,7 @@ authors: "Junya Yamauchi, Makoto Saito, Marco Omainska, Takeshi Hatanaka and Mas
 date: 2022-07-06
 conference:
 journal: "SICE Journal of Control, Measurement, and System Integration"
+type: Journal
 # paperurl:
 # link:
 citeas:

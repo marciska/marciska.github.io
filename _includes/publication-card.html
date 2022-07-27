@@ -1,15 +1,38 @@
 {% if include.pub.header.teaser %}
-  {% capture teaser %}{{ include.pub.header.teaser }}{% endcapture %}
+  {% comment %}{% capture teaser %}{{ include.pub.header.teaser }}{% endcapture %}{% endcomment %}
+  {% assign teaser = include.pub.header.teaser %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
 
-{% if include.pub.id %}
-  {% assign title = include.pub.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = include.pub.title %}
+{% assign excerpt = include.pub.excerpt | markdownify | strip_html | strip %}
+{% if excerpt == null or excerpt == "" %}
+  {% assign excerpt = include.pub.abstract | markdownify | strip_html | truncatewords: 80 %}
 {% endif %}
 
+{% assign venue = include.pub.conference %}
+{% if venue == null or venue == "" %}
+  {% assign venue = include.pub.journal %}
+{% endif %}
+
+
+<article class="pub__card" itemscope itemtype="https://schema.org/CreativeWork">
+  {% if teaser %}
+  <div class="pub__card--teaser">
+    <img src="{{ teaser | relative_url }}" alt="">
+  </div>
+  {% endif %}
+  <div class="pub__card--description">
+    <h3 class="pub__card--title" itemprop="headline">
+      <a href="{{ include.pub.url | relative_url }}" rel="permalink">{{ include.pub.title }}</a>
+    </h3>
+    <div class="pub__card--meta">{{include.pub.authors}}</div>
+    <div class="pub__card--meta">{{venue}} <span>'{{include.pub.year | slice: -2, 2}}</span></div>
+  </div>
+  <p class="pub__card--excerpt" itemprop="description">{{ excerpt }}</p>
+</article>
+
+{% comment %}
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -28,3 +51,4 @@
     {% if include.pub.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ include.pub.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
+{% endcomment %}

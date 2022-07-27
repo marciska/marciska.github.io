@@ -4,6 +4,7 @@ authors: "Junya Yamauchi, Marco Omainska, Thomas Beckers, Takeshi Hatanaka, Sand
 date: 2021-12-14
 conference: "60th IEEE Conference on Decision and Control (CDC)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas: "J. Yamauchi, M. Omainska, T. Beckers, T. Hatanaka, S. Hirche and M. Fujita, “Cooperative Visual Pursuit Control with Learning of Position Dependent Target Motion via Gaussian Process”, 2021 60th IEEE Conference on Decision and Control (CDC), 2021, pp. 2211-2217."

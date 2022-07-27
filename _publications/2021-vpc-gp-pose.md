@@ -4,6 +4,7 @@ authors: "Marco Omainska, Junya Yamauchi, Thomas Beckers, Takeshi Hatanaka, Sand
 date: 2021-06-01
 conference:
 journal: "SICE Journal of Control, Measurement, and System Integration"
+type: Journal
 # paperurl:
 # link:
 citeas: "M. Omainska, J. Yamauchi, T. Beckers, T. Hatanaka, S. Hirche, M. Fujita, “Gaussian process-based visual pursuit control with unknown target motion learning in three dimensions”, SICE Journal of Control, Measurement, and System Integration, Vol. 14, No. 1, pp. 116-127, 2021."

@@ -5,6 +5,7 @@ authors: "Makoto Saito, Junya Yamauchi, Tesshu Fujinami, Marco Omainska and Masa
 date: 2022-07-05
 conference: "16th International Conference on Motion and Vibration Control (MS-MoViC)"
 journal:
+type: Conference
 # paperurl:
 # link:
 citeas:
