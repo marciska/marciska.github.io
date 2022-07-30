@@ -26,8 +26,14 @@
     <h3 class="pub__card--title" itemprop="headline">
       <a href="{{ include.pub.url | relative_url }}" rel="permalink">{{ include.pub.title }}</a>
     </h3>
-    <div class="pub__card--meta">{{include.pub.authors}}</div>
-    <div class="pub__card--meta">{{venue}} <span>'{{include.pub.year | slice: -2, 2}}</span></div>
+    <ul class="pub__meta--wrapper social-icons">
+      <li>
+        <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="pub__meta--label">{{include.pub.authors}}</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="pub__meta--label">{{venue}} '<span id="year">{{include.pub.year | slice: -2, 2}}</span></span>
+      </li>
+    </ul>
   </div>
   <p class="pub__card--excerpt" itemprop="description">{{ excerpt }}</p>
 </article>

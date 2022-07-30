@@ -32,9 +32,9 @@ classes:
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>{% endif %}
+          {% if page.title %}
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+          {% endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}
@@ -45,25 +45,25 @@ classes:
               <a class="action-btn" href="{{action.url}}"><img src="{{action.img}}" alt=""></a>
             {% endfor %}
           </div>
-          <ul class="publication_meta__wrapper social-icons">
+          <ul class="pub__meta--wrapper social-icons">
             {% if page.authors %}
             <li>
-              <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="publication_meta--label">{{page.authors}}</span>
+              <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="pub__meta--label">{{page.authors}}</span>
             </li>
             {% endif %}
             {% if page.conference %}
             <li>
-              <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="publication_meta--label">{{page.conference}}</span>
+              <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="pub__meta--label">{{page.conference}}</span>
             </li>
             {% endif %}
             {% if page.journal %}
             <li>
-              <i class="fa-solid fa-book" aria-hidden="true"></i><span class="publication_meta--label">{{page.journal}}</span>
+              <i class="fa-solid fa-book" aria-hidden="true"></i><span class="pub__meta--label">{{page.journal}}</span>
             </li>
             {% endif %}
             {% if page.year %}
             <li>
-              <i class="fa-solid fa-calendar" aria-hidden="true"></i><span class="publication_meta--label">{{page.year}}</span>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i><span class="pub__meta--label">{{page.year}}</span>
             </li>
             {% endif %}
           </ul>
@@ -98,17 +98,17 @@ classes:
             <p class="{{notice_type}} notice_box"><span class="notice_label">{{notice_label}}:</span><span class="notice_text">{{notice_text}}</span></p>
           {% endif %}
           {% if page.abstract %}
-            <div class="publication__element--wrapper">
-              <span class="publication__element--label">Abstract:</span>
-              <div class="publication__abstract">
+            <div class="pub__element--wrapper">
+              <span class="pub__element--label">Abstract:</span>
+              <div class="pub__abstract">
                 {{page.abstract}}
               </div>
             </div>
           {% endif %}
           {% if page.citeas %}
-            <div class="publication__element--wrapper">
-              <span class="publication__element--label">Cite as:</span>
-              <div class="publication__citeas" data-copyable=true>
+            <div class="pub__element--wrapper">
+              <span class="pub__element--label">Cite as:</span>
+              <div class="pub__citeas" data-copyable=true>
                 {{page.citeas}}
               </div>
             </div>
