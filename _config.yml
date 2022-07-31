@@ -100,6 +100,9 @@ footer:
     - label: "Lab Homepage"
       icon: "fas fa-fw fa-link"
       url: https://www.scl.ipc.i.u-tokyo.ac.jp/
+    - label: "BMC"
+      icon: "fas fa-fw fa-mug-hot"
+      url: "http://buymeacoff.ee/marciska"
     # - label: "Google Scholar"
     #   icon: "fas fa-fw fa-graduation-cap"
     #   url: "https://scholar.google.com/citations?user=tN7eLc4AAAAJ"
