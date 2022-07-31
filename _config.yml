@@ -51,6 +51,22 @@ comments:
     reactions_enabled    : 1 # '1' for enabled (default), '0' for disabled
     theme                : dark_dimmed # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
 
+# Analytics tool to understand how visitors interact with my website
+#   Note: Google Analytics Universal (also g-tag ?) stops business on June 1, 2023 -> need to find replacement
+#         Didn't fully understand how to set up the new Google Analytics V4...
+analytics:
+  provider               : google-gtag # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : UA-236081900-1
+    anonymize_ip         : true # true, false (default)
+
+# SEO Related Site Verifications
+# google_site_verification : # already verified
+# bing_site_verification   : # already verified
+# naver_site_verification  : # south korean search engine
+# yandex_site_verification : # russian search engine
+# baidu_site_verification  : # I don't have a chinese phone number
+
 # Social Sharing
 # To improve the appearance of links shared from your site to social networks like Twitter and Facebook
 twitter:
@@ -191,6 +207,10 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+# Sass/SCSS
+# sass:
+#   sass_dir: _sass
+#   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 # Especially include stuff to processing
 include:
