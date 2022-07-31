@@ -23,6 +23,7 @@ abstract: "This paper considers a scenario of pursuing a moving target that may 
 header:
   image: assets/images/vpc-switched-motion_header.jpeg
   teaser: assets/images/vpc-switched-motion_teaser.jpeg
+comments: true
 actions:
   - img: https://img.shields.io/badge/Code-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white
     url: https://github.com/marciska/vpc-switched-motion

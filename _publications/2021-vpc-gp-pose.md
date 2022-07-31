@@ -19,6 +19,7 @@ header:
   image: assets/images/vpc-gp-pose_header.jpeg
   teaser: assets/images/vpc-gp-pose_teaser.jpeg
   image_description: "Schema: Pursuit Control with Visual Motion Observer and 3D motion estimation from 2D camera images"
+comments: true
 actions:
   - img: https://img.shields.io/badge/Read%20Article-red?style=for-the-badge&logo=Adobe&logoColor=white
     url: https://doi.org/10.1080/18824889.2021.1936855
