@@ -23,10 +23,10 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 masthead_title           : Home # overrides the website title displayed in the masthead, use " " for no title
 name                     : Marco Omainska
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "url:"
   Marco Omainska: Ph.D. candidate at The University of Tokyo.
-  Researcher in Cognitive Cyber-Physical Systems.
   Working with a vision that AI and Robotics will empower people to reach a higher life standard.
+  Researcher in Cognitive Cyber-Physical Systems.
 url                      : "https://marciska.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "marciska/marciska.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -39,6 +39,17 @@ search                   : true # enables/disables site's search feature
 atom_feed: # RSS feed
   path                   : # blank (default) uses feed.xml
   hide                   : true # true, false (default)
+
+# Website Comments
+comments:
+  provider: "giscus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  giscus:
+    repo_id              : R_kgDOHomktg # Shown during giscus setup at https://giscus.app
+    category_name        : Website Comments # Full text name of the category
+    category_id          : DIC_kwDOHomkts4CQiFN # Shown during giscus setup at https://giscus.app
+    discussion_term      : pathname # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled    : 1 # '1' for enabled (default), '0' for disabled
+    theme                : dark # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
 
 # Social Sharing
 # To improve the appearance of links shared from your site to social networks like Twitter and Facebook
@@ -131,10 +142,11 @@ defaults:
       type: publications
     values:
       layout: publication
-      author_profile: true
       classes: wide
+      author_profile: true
       related: true
       share: true
+      comments: true
 
 # Collections
 collections:
