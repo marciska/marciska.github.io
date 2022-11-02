@@ -68,6 +68,27 @@
   border-color: rgba(0, 0, 0, 0);
 }
 
+.notice--award {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  > span {
+    font-size: 1.2em;
+    font-weight: 700;
+    align-self: center;
+
+    &::before {
+      content: '🎉';
+      font-size: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
 /* Publication Card */
 
 .pub__card {

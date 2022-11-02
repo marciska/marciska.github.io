@@ -1,62 +1,43 @@
 {% if include.pub.header.teaser %}
-  {% comment %}{% capture teaser %}{{ include.pub.header.teaser }}{% endcapture %}{% endcomment %}
   {% assign teaser = include.pub.header.teaser %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
 
-{% assign excerpt = include.pub.excerpt | markdownify | strip_html | strip %}
-{% if excerpt == null or excerpt == "" %}
-  {% assign excerpt = include.pub.abstract | markdownify | strip_html | truncatewords: 80 %}
+{% assign abstract = include.pub.article.abstract | markdownify | strip_html | truncatewords: 80 %}
+{% assign where = include.pub.article.where %}
+{% assign article_type = include.pub.article.type | downcase %}
+{% if article_type == "journal" %}
+  {% assign where_icon = "fa-book" %}
+{% elsif article_type == "conference" %}
+  {% assign where_icon = "fa-street-view" %}
+{% else %}
+  {% assign where_icon = "fa-street-view" %}
 {% endif %}
-
-{% assign venue = include.pub.conference %}
-{% if venue == null or venue == "" %}
-  {% assign venue = include.pub.journal %}
-{% endif %}
-
 
 <article class="pub__card" itemscope itemtype="https://schema.org/CreativeWork">
   <div class="pub__card--info">
     {% if teaser %}
-    <div class="pub__card--teaser">
-      <img src="{{ teaser | relative_url }}" alt="">
-    </div>
+      <div class="pub__card--teaser">
+        <img src="{{ teaser | relative_url }}" alt="">
+      </div>
     {% endif %}
     <div class="pub__card--description">
       <h3 class="pub__card--title" itemprop="headline">
-        <a href="{{ include.pub.url | relative_url }}" rel="permalink">{{ include.pub.title }}</a>
+        <a href="{{ include.pub.url | relative_url }}" rel="permalink">{{ include.pub.article.title }}</a>
       </h3>
       <ul class="pub__meta--wrapper social-icons">
         <li>
-          <i class="fa-solid fa-user-group" aria-hidden="true"></i><span class="pub__meta--label">{{include.pub.authors}}</span>
+          <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+          <span class="pub__meta--label">{{include.pub.article.authors}}</span>
         </li>
         <li>
-          <i class="fa-solid fa-street-view" aria-hidden="true"></i><span class="pub__meta--label">{{venue}} '<span id="year">{{include.pub.year | slice: -2, 2}}</span></span>
+          <i class="fa-solid {{where_icon}}" aria-hidden="true"></i>
+          <span class="pub__meta--label">{{where}} '<span id="year">{{include.pub.article.year | slice: -2, 2}}</span>
+          </span>
         </li>
       </ul>
     </div>
   </div>
-  <p class="pub__card--excerpt" itemprop="description">{{ excerpt }}</p>
+  <p class="pub__card--excerpt" itemprop="description">{{ abstract }}</p>
 </article>
-
-{% comment %}
-<div class="{{ include.type | default: 'list' }}__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src="{{ teaser | relative_url }}" alt="">
-      </div>
-    {% endif %}
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ include.pub.link }}">{{ title }}</a> <a href="{{ include.pub.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ include.pub.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    {% include page__meta.html type=include.type %}
-    {% if include.pub.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ include.pub.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
-  </article>
-</div>
-{% endcomment %}

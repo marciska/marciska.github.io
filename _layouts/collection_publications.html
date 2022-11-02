@@ -1,10 +1,11 @@
 ---
 layout: archive
+classes: wide
 ---
 
 {{ content }}
 
-{% assign pubsByType = site.publications | where_exp: "pub", "pub.hidden != true" | group_by_exp: 'pub', 'pub.type' %}
+{% assign pubsByType = site.publications | where_exp: "pub", "pub.hidden != true" | group_by_exp: 'pub', 'pub.article.type' %}
 {% for pubtype in pubsByType reversed %}
   <section id="{{ pubtype.name }}" class="">
     <h2 class="">{{ pubtype.name }}</h2>
@@ -16,26 +17,3 @@ layout: archive
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}
-
-{% comment %}
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign pubsByType = site.publications | where_exp: "pub", "pub.hidden != true" | group_by_exp: 'pub', 'pub.type' %}
-{% for pubtype in pubsByType %}
-  <section id="{{ pubtype.name }}" class="taxonomy__section">
-    <h2 class="archive__subtitle">{{ pubtype.name }}</h2>
-    <div class="entries-{{ entries_layout }}">
-      {% for pub in pubtype.items reversed %}
-        {% include publication-card.html pub=pub type=entries_layout %}
-      {% endfor %}
-    </div>
-    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
-  </section>
-{% endfor %}
-{% endcomment %}
-
-{% comment %}
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html collection="publications" sort_by=page.sort_by sort_order=page.sort_order type=entries_layout %}
-</div>
-{% endcomment %}
