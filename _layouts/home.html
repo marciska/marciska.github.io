@@ -1,9 +1,110 @@
 ---
-layout: collection_publications
-classes:
-  - wide
 ---
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
 
-{{ content }}
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Publications" }}</h3>
+  <body class="layout--home">
+    {% include_cached skip-links.html %}
+    <div id="masthead-home">
+      {% include_cached masthead.html %}
+    </div>
+
+    <main class="initial-content">
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <img src="/assets/images/profile.jpg" alt="" class="hero-image">
+          <div class="hero-name">
+            <span class="furigana">オマインスカ ・ マルコ</span>
+            <span>Marco Omainska</span>
+          </div>
+          <div class="hero-description__wrapper">
+            <div class="hero-description">
+              <span>Ph.D. candidate at The University of Tokyo.</span>
+              <span>Working on Cognitive Cyber-Physical Systems.</span>
+            </div>
+          </div>
+          <div class="hero-follow">
+            <ul class="author__urls social-icons">
+              <li>
+                <a href="mailto:{{ author.email }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/{{ author.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+                </a>
+              </li>
+              <!-- <li>
+                <a href="" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                </a>
+              </li> -->
+              <li>
+                <a href="/publications/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/cv/cv.pdf" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+                  <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout--page" id="page-title">
+        <h2><span>Recent Publications</span></h2>
+        {% assign pubsByType = site.publications | where_exp: "pub", "pub.hidden != true" | group_by_exp: 'pub', 'pub.article.type' %}
+        {% for pubtype in pubsByType reversed %}
+          <section id="{{ pubtype.name }}" class="">
+            <h3 class="">{{ pubtype.name }}</h3>
+            <div class="">
+              {% for pub in pubtype.items reversed %}
+                {% include publication-card.html pub=pub %}
+              {% endfor %}
+            </div>
+            <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+          </section>
+        {% endfor %}
+      </section>
+    </main>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
