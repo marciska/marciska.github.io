@@ -59,3 +59,10 @@ div.highlight pre.highlight, figure.highlight pre, [data-copyable=true] {
 * > .copy_code_button:focus {
   opacity: 1;
 }
+
+// waiting for content to load before animations play
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}

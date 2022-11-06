@@ -72,8 +72,8 @@
     animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
 
     > * {
       margin: 10px 0px;
@@ -186,6 +186,10 @@
   h3 {
     font-size: 1.5em;
   }
+}
+
+.layout--home .page__footer {
+  margin-top: 0;
 }
 
 .search-content {

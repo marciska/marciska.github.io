@@ -74,7 +74,7 @@
         </div>
       </section>
 
-      <section class="layout--page" id="page-title">
+      {%- comment -%} <section class="layout--page" id="page-title">
         <h2><span>Recent Publications</span></h2>
         {% assign pubsByType = site.publications | where_exp: "pub", "pub.hidden != true" | group_by_exp: 'pub', 'pub.article.type' %}
         {% for pubtype in pubsByType reversed %}
@@ -88,7 +88,7 @@
             <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
           </section>
         {% endfor %}
-      </section>
+      </section> {%- endcomment -%}
     </main>
 
     {% if site.search == true %}
@@ -101,6 +101,7 @@
       <footer>
         {% include footer/custom.html %}
         {% include_cached footer.html %}
+        <script src={{ '/assets/js/custom/home.js' | relative_url }}></script>
       </footer>
     </div>
 
